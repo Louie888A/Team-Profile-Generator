@@ -1,0 +1,31 @@
+html,
+body {
+  background-color: #e0f4fd;
+  font-family: "Roboto", sans-serif;
+}
+
+.team-heading {
+  background: linear-gradient(to top, #09203f 0%, #537895 100%);
+  color: #e0f4fd;
+}
+
+.team-heading h1 {
+  text-transform: uppercase;
+}
+
+.jumbotron {
+  border-radius: 0;
+}
+
+.card-header {
+  background: linear-gradient(to top, #09203f 0%, #537895 100%);
+  color: #e0f4fd;
+}
+
+.cardSection {
+  color: #2a3b42;
+}
+
+a {
+  color: #b66100;
+}
