@@ -75,6 +75,8 @@ Node.js, OOP, TDD, Jest, Inquirer, HTML, CSS, JavaScript, Bootstrap
 
 Use `npm run test` to run Jest for tests on constructors.
 
+<pre> <code> npm run test </code> </pre>
+
 ## License
 
 This project is licensed under the terms of the MIT license.
