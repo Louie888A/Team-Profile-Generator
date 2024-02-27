@@ -1,10 +1,9 @@
 // creates the team
 // function generates the HTML content for each team member based on their role
-const generateTeam = team => {
-
-    // creates the manager html
-    const generateManager = manager => {
-        return `
+const generateTeam = (team) => {
+  // creates the manager html
+  const generateManager = (manager) => {
+    return `
         <div class="col-lg-4 col-md-9 p-3" id="manager">
         <div class="card employee-card shadow d-flex flex-column align-items-stretch">
         <div class="card-header text-center">
@@ -20,21 +19,21 @@ const generateTeam = team => {
                 ${manager.getOfficeNumber()}</li>
             </ul>
         </div>
-    </div>
-    </div>
+        </div>
+        </div>
         `;
-    };
+  };
 
-    // creates the html for engineers
-    const generateEngineer = engineer => {
-        return `
+  // creates the html for engineers
+  const generateEngineer = (engineer) => {
+    return `
         <div class="col-lg-4 col-md-9 p-3" id="engineer">
         <div class="card employee-card shadow d-flex flex-column align-items-stretch">
-    <div class="card-header text-center">
+        <div class="card-header text-center">
         <h2 class="card-title">${engineer.getName()}</h2>
         <h3 class="card-title"><i class="fas fa-glasses mr-2"></i>${engineer.getRole()}</h3>
-    </div>
-    <div class="card-body">
+        </div>
+        <div class="card-body">
         <ul class="list-group">
             <li class="list-group-item">ID: ${engineer.getId()}</li>
             <li class="list-group-item">Email: <br>
@@ -43,22 +42,22 @@ const generateTeam = team => {
             <li class="list-group-item">GitHub: <br>
             <a href="https://github.com/${engineer.getGithub()}" target="_blank" rel="noopener noreferrer">${engineer.getGithub()}</a></li>
         </ul>
-    </div>
-</div>
-</div>
+        </div>
+        </div>
+        </div>
         `;
-    };
+  };
 
-    // creates the html for interns
-    const generateIntern = intern => {
-        return `
+  // creates the html for interns
+  const generateIntern = (intern) => {
+    return `
         <div class="col-lg-4 col-md-9 p-3" id="intern">
         <div class="card employee-card shadow d-flex flex-column align-items-stretch">
-    <div class="card-header text-center">
+        <div class="card-header text-center">
         <h2 class="card-title">${intern.getName()}</h2>
         <h3 class="card-title"><i class="fas fa-user-graduate mr-2"></i>${intern.getRole()}</h3>
-    </div>
-    <div class="card-body">
+        </div>
+        <div class="card-body">
         <ul class="list-group">
             <li class="list-group-item">ID: ${intern.getId()}</li>
             <li class="list-group-item">Email: <br>
@@ -67,41 +66,38 @@ const generateTeam = team => {
             <li class="list-group-item">School: <br>
             ${intern.getSchool()}</li>
         </ul>
-    </div>
-  </div>
-</div>
+        </div>
+        </div>
+        </div>
         `;
-    };
-    // Array stores the generated HTML for each team member
-    const html = [];
-    // Pushes manager HTML to the array
-    // .filter() filters the team array by selecting only those team members whose role is "Manager"
-    // .map() transforms each element of the filtered array by calling
-    // the generateManager function for each team member with the role "Manager."
-    html.push(team
-        .filter(employee => employee.getRole() === "Manager")
-        .map(manager => generateManager(manager))
-    );
-    // .join("") is used to concatenate the array of HTML strings into a single string. 
-    // The map function returns an array of HTML strings (one for each engineer), 
-    // and join("") joins these strings together without any separator.
-    html.push(team
-        .filter(employee => employee.getRole() === "Engineer")
-        .map(engineer => generateEngineer(engineer))
-        .join("")
-    );
-    html.push(team
-        .filter(employee => employee.getRole() === "Intern")
-        .map(intern => generateIntern(intern))
-        .join("")
-    );
-    return html.join("");
-}
+  };
+  // Array stores the generated HTML for each team member
+  const html = [];
+
+  html.push(
+    team
+      .filter((employee) => employee.getRole() === "Manager")
+      .map((manager) => generateManager(manager))
+  );
+
+  html.push(
+    team
+      .filter((employee) => employee.getRole() === "Engineer")
+      .map((engineer) => generateEngineer(engineer))
+      .join("")
+  );
+  html.push(
+    team
+      .filter((employee) => employee.getRole() === "Intern")
+      .map((intern) => generateIntern(intern))
+      .join("")
+  );
+  return html.join("");
+};
 
 // exports function to generate entire page
-module.exports = team => {
-
-    return `
+module.exports = (team) => {
+  return `
     <!DOCTYPE html>
 <html lang="en">
 

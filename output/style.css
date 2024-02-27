@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 html,
 body {
   background-color: #e0f4fd;
@@ -5,8 +11,8 @@ body {
 }
 
 .team-heading {
-  background: linear-gradient(to top, #09203f 0%, #537895 100%);
-  color: #e0f4fd;
+  background: linear-gradient(to top, #f65a06 0%, #f006dc 100%);
+  color: white;
 }
 
 .team-heading h1 {
@@ -18,14 +24,14 @@ body {
 }
 
 .card-header {
-  background: linear-gradient(to top, #09203f 0%, #537895 100%);
-  color: #e0f4fd;
+  background: linear-gradient(to top, #f65a06 0%, #f006dc 100%);
+  color: white;
 }
 
 .cardSection {
-  color: #2a3b42;
+  color: #9ac8dc;
 }
 
 a {
-  color: #b66100;
+  color: #0b0b0a;
 }
